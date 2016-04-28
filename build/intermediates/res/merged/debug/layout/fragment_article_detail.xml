@@ -99,10 +99,6 @@
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
         </LinearLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
-
-
-
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
         android:layout_width="wrap_content"
@@ -113,8 +109,15 @@
         fab:fab_shadow="true"
         fab:fab_type="normal"
         app:backgroundTint="@color/theme_accent"
+        android:elevation="6dp"
         android:contentDescription="share"
         />
 
+
+
+
+
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>
