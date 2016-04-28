@@ -1,29 +1,36 @@
 package com.example.xyzreader.ui;
 
-import android.app.LoaderManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.Loader;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
-import android.text.format.DateUtils;
-import android.util.TypedValue;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+        import android.app.Activity;
+        import android.app.ActivityOptions;
+        import android.app.LoaderManager;
+        import android.content.BroadcastReceiver;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.IntentFilter;
+        import android.content.Loader;
+        import android.database.Cursor;
+        import android.os.Bundle;
+        import android.support.design.widget.CoordinatorLayout;
+        import android.support.design.widget.Snackbar;
+        import android.support.v4.app.ActivityOptionsCompat;
+        import android.support.v4.widget.SwipeRefreshLayout;
+        import android.support.v7.app.ActionBarActivity;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.RecyclerView;
+        import android.support.v7.widget.StaggeredGridLayoutManager;
+        import android.support.v7.widget.Toolbar;
+        import android.text.format.DateUtils;
+        import android.util.TypedValue;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ImageView;
+        import android.widget.TextView;
 
-import com.example.xyzreader.R;
-import com.example.xyzreader.data.ArticleLoader;
-import com.example.xyzreader.data.ItemsContract;
-import com.example.xyzreader.data.UpdaterService;
+        import com.example.xyzreader.R;
+        import com.example.xyzreader.data.ArticleLoader;
+        import com.example.xyzreader.data.ItemsContract;
+        import com.example.xyzreader.data.UpdaterService;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -31,12 +38,13 @@ import com.example.xyzreader.data.UpdaterService;
  * touched, lead to a {@link ArticleDetailActivity} representing item details. On tablets, the
  * activity presents a grid of items as cards.
  */
-public class ArticleListActivity extends ActionBarActivity implements
+public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
+    private CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,7 @@ public class ArticleListActivity extends ActionBarActivity implements
         setContentView(R.layout.activity_article_list);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
 
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
@@ -56,6 +64,8 @@ public class ArticleListActivity extends ActionBarActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+
+        Snackbar.make(coordinatorLayout,"Welcome to XYZReader",Snackbar.LENGTH_LONG).show();
     }
 
     private void refresh() {
@@ -129,6 +139,7 @@ public class ArticleListActivity extends ActionBarActivity implements
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
             final ViewHolder vh = new ViewHolder(view);
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
