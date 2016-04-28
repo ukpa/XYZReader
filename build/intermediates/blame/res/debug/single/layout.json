@@ -108,6 +108,10 @@
         "source": "/Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_media_action.xml"
     },
     {
+        "merged": "/Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/res/layout/activity_splash.xml"
+    },
+    {
         "merged": "/Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_template_media.xml"
     },
