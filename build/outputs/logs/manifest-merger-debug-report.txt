@@ -114,7 +114,7 @@ ADDED from /Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/And
 activity#com.example.xyzreader.SplashActivity
 ADDED from /Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/AndroidManifest.xml:48:9-56:20
 	android:label
-		ADDED from /Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/AndroidManifest.xml:50:13-58
+		ADDED from /Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/AndroidManifest.xml:50:13-45
 	android:name
 		ADDED from /Users/unnikrishnanpatel/AndroidStudioProjects/XYZReader/src/main/AndroidManifest.xml:49:13-43
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
