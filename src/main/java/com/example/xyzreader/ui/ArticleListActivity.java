@@ -25,6 +25,7 @@ package com.example.xyzreader.ui;
         import android.view.MenuItem;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.view.Window;
         import android.widget.ImageView;
         import android.widget.TextView;
         import android.widget.Toast;
@@ -52,6 +53,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
+
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
@@ -168,10 +170,10 @@ public class ArticleListActivity extends AppCompatActivity implements
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
             final ViewHolder vh = new ViewHolder(view);
-
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this).toBundle();
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
                 }
