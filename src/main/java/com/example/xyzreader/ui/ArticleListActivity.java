@@ -64,6 +64,12 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+            }
+        });
 
         Snackbar.make(coordinatorLayout,"Welcome to XYZReader",Snackbar.LENGTH_LONG).show();
     }
